@@ -9,7 +9,7 @@ import {GrCurrency} from "react-icons/gr"
 export default function CountryCard({name,flagUrl,capital, currency}) {
 
   return (
-    <Card sx={{ maxWidth: 345 , width:220}}>
+    <Card sx={{ maxWidth: 345 , width:220 , height:300}}>
       <CardMedia
         component="img"
         sx={{ height: 140 }}
