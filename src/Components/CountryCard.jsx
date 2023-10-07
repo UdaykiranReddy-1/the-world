@@ -4,9 +4,10 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import {FaBuildingFlag} from "react-icons/fa6"
-import {GrCurrency} from "react-icons/gr"
+import {BsPeopleFill} from "react-icons/bs"
+// import {GrCurrency} from "react-icons/gr"
 
-export default function CountryCard({name,flagUrl,capital, currency}) {
+export default function CountryCard({name,flagUrl,capital, population}) {
 
   return (
     <Card sx={{ maxWidth: 345 , width:220 , height:300}}>
@@ -25,8 +26,11 @@ export default function CountryCard({name,flagUrl,capital, currency}) {
             <div className="capital">
             <FaBuildingFlag className='icon'/>{capital} 
             </div>
-            <div className="currency">
+            {/* <div className="currency">
              <GrCurrency className='icon'/>{currency?.map((curr)=> curr.name).join(',')}
+            </div> */}
+            <div className="population">
+            <BsPeopleFill className="icon"/>{population}
             </div>
           </div>
         </Typography>

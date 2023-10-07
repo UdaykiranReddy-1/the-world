@@ -22,7 +22,7 @@ const CountryDetails = () => {
         <div>Population : {detail.population}</div>
         <div>Currency : {detail.currencies?.map(currency => currency.name).join(",")}</div>
         <div>Capital : {detail.capital}</div>
-        <div>Population : {detail.population}</div>
+        {/* <div>Population : {detail.population}</div> */}
 
       </div>
     </div>

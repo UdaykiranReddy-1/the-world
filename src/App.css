@@ -32,6 +32,8 @@ img{
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
+  justify-content: center;
+
 }
 
 .long-name {
@@ -43,6 +45,7 @@ img{
 .details{
   display: flex;
   justify-content: space-between;
+  align-items: end;
   align-items: center;
   font-size: 14px;
 }
@@ -51,8 +54,13 @@ img{
   display: flex;
   align-items: center;
   /* justify-content: center; */
+  width: 50%;
 } 
+.currency{
+  align-items: right;
+  text-align: right;
 
+}
 .icon{
   font-size: 16px;
   margin-right: 3px;

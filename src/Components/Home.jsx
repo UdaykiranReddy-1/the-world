@@ -70,6 +70,7 @@ const Home = () => {
             <h1 className="titlehead">
                 <img src={image} alt="" />
                 <p>World</p>
+                <img src={image} alt="" />
             </h1>
             <div className="filterSection">
 
@@ -127,7 +128,8 @@ const Home = () => {
                                     name={country.name}
                                     flagUrl={country.flags.png}
                                     capital={country.capital}
-                                    currency={country.currencies}
+                                    // currency={country.currencies}
+                                    population={country.population}
                                     key={index}
                                     className="countryCard"
                                 />
