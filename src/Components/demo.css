@@ -1,0 +1,45 @@
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+
+.country-info-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    width: 50%;
+  }
+  
+  .left, .right {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .left {
+    text-align: center;
+    border-right: 1px solid black; /* Add a border between left and right divisions */
+  }
+  
+  .left img {
+    min-width: 70%;
+    height: auto;
+  }
+  
+  .right {
+    text-align: left;
+  }
+  
+  /* Media query for responsiveness */
+  @media (max-width: 768px) {
+    .country-info-card {
+      flex-direction: column;
+    }
+    .left, .right {
+      border: none; /* Remove border on smaller screens */
+    }
+  }
+  

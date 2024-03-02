@@ -2,9 +2,9 @@ import React from 'react'
 import {BrowserRouter , Routes , Route} from "react-router-dom"
 import Home from "./Components/Home"
 import CountryDetails from "./Components/CountryDetails"
+// import CountryDetails from "./Components/demoCard"
 
 import './App.css'
-import { dividerClasses } from '@mui/material'
 
 const App = () => {
   return (

@@ -1,3 +1,59 @@
-.country-detail-wrapper{
+.country-detail-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    /* height: 100vh; */
+}
 
+.councard {
+    margin: 3rem;
+    border: 2px solid black;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px; /* Add rounded corners as needed */
+    box-shadow: 0 5px 10px 5px rgba(0, 0, 0, 0.1); /* Add shadow effect */
+
+}
+
+.leftdiv , .rightdiv {
+    flex: 1;
+    flex-shrink: 0;
+    padding: 2rem 2rem;
+}
+
+.leftdiv {
+    /* width: 50%; */
+    /* padding: 2rem 30%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgdiv {
+    width: 70% ;
+    height: auto;
+    border: 2px solid black;
+    
+}
+
+.imgdiv img {
+    min-width: 100%;
+    height: auto;
+    display: block;
+      
+}
+
+
+
+.rightdiv {
+    /* width: 500px; */
+    border-left: 2px solid black;
+    overflow: auto; /* or overflow: visible; */
+    word-wrap: break-word; /* Ensure long words break to prevent horizontal overflow */
+    /* overflow-x: hidden; */
+    /* padding: 2rem ; */
 }

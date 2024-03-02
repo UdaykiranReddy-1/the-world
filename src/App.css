@@ -3,32 +3,109 @@
 *{
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
-  /* margin: 0;
-  padding: 0; */
+  margin: 0;
+  padding: 0;
 }
 
-img{
-  width: 50px;
-  height: 30px;
-  margin-right: 5px;
-}
-
-.title{
-  font-weight: 600;
-  font-size: 20px;
-}
-
-.titlehead{
-  font-weight: 600;
-  font-size: 30px;
+.header{
+  width : 100%;
+  height: 5.5rem;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  font-size: 2rem;
   border-bottom: 2px solid lightgrey;
   box-shadow: 0px 15px 10px -15px lightgrey;
 }
 
+.titlehead h3{
+  font-weight: 600;
+}
+
+img{
+  width: 60px;
+  height: 40px;
+  margin-right: 5px;
+}
+
+/* .title{
+  font-weight: 600;
+  font-size: 20px;
+} */
+
+.titlehead{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.filterSection{
+  width: 100%;
+  height: 60px;
+  margin: 1.2rem 0;
+  padding : 3rem 20%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #F8F8F8;
+
+}
+
+.filterSection h2{
+  margin: 0;
+  margin-top: 0.5%;
+  
+}
+
+.input-box input {
+  width: 200px;
+  height: 45px;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid black;
+  border-radius: 4px;
+  outline: none;
+}
+
+.input-box input::placeholder {
+  color: #999; /* Change placeholder text color to gray */
+}
+
+.placeholder{
+  color: #999;
+
+}
+
+.input-box input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.dropdown select {
+  width: 200px;
+  height: 45px;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid black;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+}
+
+.dropdown select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.dropdown select option{
+  border: 2px solid #007bff;
+}
+
+
+
 .cardSection{
+
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
@@ -72,18 +149,3 @@ img{
 
 }
 
-.filterSection{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: 25px;
-  padding-left: 20%;
-  padding-right: 20%;
-
-}
-
-.filterSection h2{
-  margin: 0;
-  margin-top: 0.5%;
-  
-}
