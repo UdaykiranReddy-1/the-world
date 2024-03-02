@@ -3,10 +3,12 @@ import CountryCard from './CountryCard'
 import { getAllCountries } from '../API'
 import image from "./../assets/World_map.png"
 import { Link } from 'react-router-dom'
+import LoadingAnimation from './LoadingAnimation'
 
 
 const Home = () => {
 
+    const [loading , setLoading] = useState(false);
     const [countrieslist, setCountrieslist] = useState([])
     const [filteredCountriesList, setfilteredCountriesList] = useState([]);
     const [region, setRegion] = useState('');
@@ -22,12 +24,14 @@ const Home = () => {
 
     // Used to fetch the Countries Object from API through Axios.
     useEffect(() => {
+        setLoading(true);
         getAllCountries().then((result) => {
             const countries = result.data;
             setCountrieslist(countries);
             setfilteredCountriesList(countries);
             // console.log(result);
         })
+        setLoading(false);
     }, [])
 
 
@@ -96,6 +100,7 @@ const Home = () => {
 
             </div>
             <div className="cardSection">
+            {/* {!filteredCountriesList && <LoadingAnimation/>} */}
                 {
                     filteredCountriesList.map((country, index) => {
                         return (
