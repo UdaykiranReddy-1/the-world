@@ -49,7 +49,7 @@ const CountryDetails = () => {
             <div>Regional Blocs : {detail.regionalBlocs?.map(rb => rb.acronym).join(", ")}</div>
 
 
-            <h3>location</h3>
+            <h3>Location</h3>
             <div>Region : {detail.region}</div>
             <div>Subregion : {detail.subregion}</div>
             <div>latitude : {detail.latlng?.['0'] ?? 'N/A'}</div>
