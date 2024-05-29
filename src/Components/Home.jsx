@@ -4,12 +4,14 @@ import { getAllCountries } from '../API'
 import image from "./../assets/World_map.png"
 import { Link } from 'react-router-dom'
 import LoadingAnimation from './LoadingAnimation'
+import ErrorReport from './ErrorReport'
 
 
 const Home = () => {
 
-    const [loading , setLoading] = useState(false);
-    const [countrieslist, setCountrieslist] = useState([])
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(false);
+    const [countrieslist, setCountrieslist] = useState([]);
     const [filteredCountriesList, setfilteredCountriesList] = useState([]);
     const [region, setRegion] = useState('');
     const [countryName, setcountryName] = useState('');
@@ -29,11 +31,13 @@ const Home = () => {
             const countries = result.data;
             setCountrieslist(countries);
             setfilteredCountriesList(countries);
-            // console.log(result);
-        })
-        setLoading(false);
+            setError(false);
+            setLoading(false);
+        }).catch(() => {
+            setLoading(false);
+            setError(true);
+        });
     }, [])
-
 
     // Used to Filter countries based on Entered values.
     useEffect(() => {
@@ -58,8 +62,6 @@ const Home = () => {
             }
             setfilteredCountriesList(filtered_countries);
         }
-
-
     }, [region, countryName, countrieslist])
 
     return (
@@ -72,11 +74,7 @@ const Home = () => {
                 </div>
             </div>
             <div className="filterSection">
-
-                <h2>
-                    Filter Countries By:
-                </h2>
-
+                <h2>Filter Countries By:</h2>
                 <div className="input-box">
                     <input
                         type="text"
@@ -85,7 +83,6 @@ const Home = () => {
                         placeholder="Country Name ..."
                     />
                 </div>
-
                 <div className="dropdown">
                     <select value={region} onChange={handleRegionChange}>
                         <option style={{ color: '#999' }} value="">Continents ...</option>
@@ -97,29 +94,28 @@ const Home = () => {
                         <option value="Oceania">Oceania</option>
                     </select>
                 </div>
-
             </div>
             <div className="cardSection">
-            {/* {!filteredCountriesList && <LoadingAnimation/>} */}
                 {
-                    filteredCountriesList.map((country, index) => {
-                        return (
-                            <Link to={`/countries/${country.alpha3Code}`}
-                                key={country.alpha3Code}
-                                style={{ textDecoration: 'none' }} >
-                                <CountryCard
-                                    name={country.name}
-                                    flagUrl={country.flags.png}
-                                    capital={country.capital}
-                                    // currency={country.currencies}
-                                    population={country.population}
-                                    key={index}
-                                    className="countryCard"
-                                />
-                            </Link>
-                        )
-                    })
+                    error ? <ErrorReport /> : null
                 }
+                {loading ? <LoadingAnimation/> :
+                    filteredCountriesList.map((country, index) => (
+                        <Link to={`/countries/${country.alpha3Code}`}
+                            key={country.alpha3Code}
+                            style={{ textDecoration: 'none' }} >
+                            <CountryCard
+                                name={country.name}
+                                flagUrl={country.flags.png}
+                                capital={country.capital}
+                                population={country.population}
+                                key={index}
+                                className="countryCard"
+                            />
+                        </Link>
+                    ))
+                }
+
             </div>
         </div>
     )
