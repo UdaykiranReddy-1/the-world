@@ -2,7 +2,17 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
+
+// Manually set the marker icons to use local files
+delete L.Icon.Default.prototype._getIconUrl;
+
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl: `/leaflet/marker-icon-2x.png`,
+  iconUrl: `/leaflet/marker-icon.png`,
+  shadowUrl: `/leaflet/marker-shadow.png`
+});
 
 const MapPage = () => {
   const location = useLocation();
