@@ -12,8 +12,6 @@ const CountryDetails = () => {
             .then(result => setDetail(result.data))
     }, [code])
 
-    console.log(detail);
-
     return (
         <div className="wrapper">
             <div className="country-info-card">

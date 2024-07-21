@@ -157,3 +157,13 @@ img{
   align-items: center;
 }
 
+.mapdiv{
+  width: 100%;
+  height: 100vh;
+}
+
+.locate-link{
+  text-decoration: none;
+  color: Blue;
+  font-weight: 600;
+}

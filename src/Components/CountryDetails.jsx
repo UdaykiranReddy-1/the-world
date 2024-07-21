@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams,Link } from 'react-router-dom'
 import { getCountryDetail } from '../API';
 import image from "./../assets/World_map.png"
 import "./countryDetails.css"
@@ -12,8 +12,6 @@ const CountryDetails = () => {
     getCountryDetail(code)
       .then(result => setDetail(result.data))
   }, [code])
-
-  console.log(detail);
 
   return (
     <>
@@ -55,10 +53,16 @@ const CountryDetails = () => {
             <div>latitude : {detail.latlng?.['0'] ?? 'N/A'}</div>
             <div>longitude : {detail.latlng?.['1'] ?? 'N/A'}</div>
             <div>Time zones : {detail.timezones?.map(code => code).join(",")}</div>
+            <Link
+              to={`/map/${code}`}
+              state={{ name: detail.name, lat: detail.latlng?.['0'], lng: detail.latlng?.['1'] }}
+              className="locate-link"
+            >
+              View on World Map
+            </Link>
 
           </div>
         </div>
-
       </div>
     </>
 
