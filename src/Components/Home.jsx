@@ -99,7 +99,7 @@ const Home = () => {
                 {
                     error ? <ErrorReport /> : null
                 }
-                {loading ? <LoadingAnimation/> :
+                {loading ? <LoadingAnimation /> :
                     filteredCountriesList.map((country, index) => (
                         <Link to={`/countries/${country.alpha3Code}`}
                             key={country.alpha3Code}
@@ -117,6 +117,14 @@ const Home = () => {
                 }
 
             </div>
+            {
+                loading ? null :
+                    <a href="https://github.com/UdaykiranReddy-1" target='_blank' className='bottom-link'>
+                        <div className='bottom-liner'>
+                            Made with ❤️ by Uday
+                        </div>
+                    </a>
+            }
         </div>
     )
 }

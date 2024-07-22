@@ -109,7 +109,21 @@ img{
   flex-wrap: wrap;
   gap: 12px;
   justify-content: center;
+  margin-bottom: 50px;
 
+}
+
+.bottom-liner{
+  background-color: gainsboro;
+  color: black;
+  font-weight: 500;
+  padding: 10px;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.bottom-link{
+  text-decoration: none;
 }
 
 
