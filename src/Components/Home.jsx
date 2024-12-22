@@ -117,14 +117,14 @@ const Home = () => {
                 }
 
             </div>
-            {
+{/*             {
                 loading ? null :
                     <a href="https://github.com/UdaykiranReddy-1" target='_blank' className='bottom-link'>
                         <div className='bottom-liner'>
                             Made with ❤️ by Uday
                         </div>
                     </a>
-            }
+            } */}
         </div>
     )
 }
