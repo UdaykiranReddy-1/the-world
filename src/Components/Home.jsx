@@ -55,7 +55,7 @@ const Home = () => {
                 // step-2 : filter based on name.
                 filtered_countries = filtered_countries.filter(country => {
                     //convert both input name and country name to lowercase for matching
-                    const lowerCaseCountry = country.name.toLowerCase();
+                    const lowerCaseCountry = country.name.common.toLowerCase();
                     if (lowerCaseCountry.includes(countryName.toLowerCase())) return true;
                     return false;
                 });
@@ -101,11 +101,11 @@ const Home = () => {
                 }
                 {loading ? <LoadingAnimation /> :
                     filteredCountriesList.map((country, index) => (
-                        <Link to={`/countries/${country.alpha3Code}`}
+                        <Link to={`/countries/${country.cioc}`}
                             key={country.alpha3Code}
                             style={{ textDecoration: 'none' }} >
                             <CountryCard
-                                name={country.name}
+                                name={country.name.common}
                                 flagUrl={country.flags.png}
                                 capital={country.capital}
                                 population={country.population}
