@@ -191,3 +191,41 @@ img{
   color: Blue;
   font-weight: 600;
 }
+
+.not-found {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  font-size: 24px;
+  color: #080808;
+}
+
+.loader-container {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: fit-content;
+  font-weight: bold;
+  font-family: monospace;
+  font-size: 30px;
+  overflow: hidden;
+}
+.loader::before {
+  content: "Loading...";
+  color: #0000;
+  text-shadow: 0 0 0 #000,10ch 0 0 #fff,20ch 0 0 #000;
+  background: linear-gradient(90deg,#0000 calc(100%/3),#000 0 calc(2*100%/3),#0000 0) left/300% 100%;
+  animation: l23 2s infinite;
+}
+
+@keyframes l23{
+  50% {background-position: center;text-shadow: -10ch 0 0 #000,    0 0 0 #fff,10ch 0 0 #000}
+  100%{background-position: right ;text-shadow: -20ch 0 0 #000,-10ch 0 0 #fff,   0 0 0 #000}
+}

@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { getCountryDetail } from '../API'
 import image from "./../assets/World_map.png"
+import LoadingAnimation from './LoadingAnimation'
 import "./countryDetails.css"
 
 const CountryDetails = () => {
@@ -16,7 +17,7 @@ const CountryDetails = () => {
     })
   }, [code])
 
-  if (!detail) return <div>Loading...</div>
+  if (!detail) return <LoadingAnimation/>
 
   const nativeNames = detail.name?.nativeName
     ? Object.values(detail.name.nativeName).map(n => n.common).join(", ")

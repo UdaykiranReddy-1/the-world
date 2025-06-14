@@ -1,4 +1,3 @@
-import React from 'react'
 import {BrowserRouter , Routes , Route} from "react-router-dom"
 import Home from "./Components/Home"
 import CountryDetails from "./Components/CountryDetails"
@@ -14,7 +13,8 @@ const App = () => {
         <Route path='/' element={<Home/>}/>
         <Route path='/countries/:code' element={<CountryDetails/>}/>
         <Route path='/map/:code' element={<MapPage/>} />
-        <Route path='*' element={<h2>404 Page Not Found</h2>}/>
+        <Route path='/countries/' element={<h2 className='not-found'>Sorry 🙇‍♂️ Guys<br/>Country code could not be found to make an API call</h2>}/>
+        <Route path='*' element={<h2 className='not-found'>404 Page Not Found. </h2>}/>
       </Routes>
     </BrowserRouter>
   )

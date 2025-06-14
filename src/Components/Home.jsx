@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import CountryCard from './CountryCard'
 import { getAllCountries } from '../API'
 import image from "./../assets/World_map.png"
